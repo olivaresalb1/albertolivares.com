@@ -1,0 +1,44 @@
+<title>Albert Olivares - Home</title>
+
+<div class="container-fluid header-main">
+	<div class="row row-bg">
+		<div class="col-md-4 col-md-offset-4 col-fg">
+			<h1 class="text-center title-name">Albert Olivares</h1>
+			<img src="app/images/albert.png" alt="albertpic" id="albertpic" class="img-circle img-responsive center-block">
+			<h3 class="text-center">Web Developer</h3>
+			<p class="lead text-center quote">I build everywhere I go.</p>
+		</div>
+		<img src="app/images/albert-bg.png" alt="albert-bg" id="albert-bg">
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row row-padding-top-2 row-padding-bottom-2">
+		<div class="col-md-4 col-md-offset-4">
+			<div class="btn-group btn-group-main" role="group" aria-label="...">
+				<button type="button" class="btn btn-default" ng-repeat="block in availableBlocks track by $index"
+						ng-click="addBlock(availableBlocks, blockList, $index)">
+					{{ block.title }}
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class"row">
+		<h3 class="col-md-4 col-md-offset-4 text-center">Add, Remove, and re-arrange the stack!</h3>
+	</div>
+	<div class="row row-sortable-container">
+		<div class="col-md-4 col-md-offset-4">
+			<ul ui-sortable ng-model="blockList">
+				<li class="row" ng-repeat="block in blockList track by $index">
+					<div class="col-xs-11 row-sortable">
+						<div ng-bind-html="block.content_html"></div>
+					</div>
+					<div class="col-xs-1 glyphicon glyphicon-remove" ng-click="removeBlock(blockList, $index)"></div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
