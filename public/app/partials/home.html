@@ -12,15 +12,23 @@
 	</div>
 </div>
 
-<div class="container-fluid">
-	<div class="row row-padding-top-2 row-padding-bottom-2">
+<!-- <div class="container-fluid">
+	<div class="row row-padding-top-2 row-padding-bottom-2 row-centered">
 		<div class="col-md-4 col-md-offset-4">
-			<div class="btn-group btn-group-main" role="group" aria-label="...">
-				<button type="button" class="btn btn-default" ng-repeat="block in availableBlocks track by $index"
-						ng-click="addBlock(availableBlocks, blockList, $index)">
-					{{ block.title }}
-				</button>
-			</div>
+			<button type="button" class="btn btn-default text-center" ng-repeat="block in availableBlocks track by $index"
+					ng-click="addBlock(availableBlocks, blockList, $index)">
+				{{ block.title }}
+			</button>
+		</div>
+	</div>
+</div> -->
+
+<div class="container-fluid">
+	<div class="row row-padding-top-2 row-padding-bottom-2 row-centered row-nav">
+		<div class="col-md-4 col-md-offset-4">
+			<h4 class="h4-equal-margin">
+				<a class="text-center"  ng-repeat="block in availableBlocks track by $index" ng-click="addBlock(availableBlocks, blockList, $index)">{{ block.title }}</a>
+			</h4>
 		</div>
 	</div>
 </div>
